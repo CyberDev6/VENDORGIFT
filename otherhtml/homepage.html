@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified E-Card Vendor</title>
+<style>
+/* Reset and Base Styles */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background: linear-gradient(to bottom, #d65a80 0%, #f7e6eb 15%, #f7e6eb 85%, #d65a80 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Card Container */
+.card {
+background: #ffffff;
+background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 20 C40 40, 20 40, 20 50 C20 60, 40 60, 50 80 C60 60, 80 60, 80 50 C80 40, 60 40, 50 20 Z" fill="%23f7d1db" opacity="0.3"/></svg>');
+width: 100%;
+max-width: 450px;
+border-radius: 24px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Top Header Banner */
+.card-header {
+background: linear-gradient(180deg, #2e9652 0%, #238043 100%);
+padding: 24px 20px 20px 20px;
+text-align: center;
+}
+
+.vendor-badge {
+background-color: #ffffff;
+color: #238043;
+font-weight: 700;
+font-size: 16px;
+letter-spacing: 1px;
+padding: 10px 24px;
+border-radius: 50px;
+display: inline-block;
+text-transform: uppercase;
+border: 2px solid #52b774;
+box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Content Body */
+.card-body {
+padding: 40px 30px;
+text-align: center;
+}
+
+h1 {
+color: #2b2b2b;
+font-size: 28px;
+font-weight: 700;
+line-height: 1.3;
+margin-bottom: 16px;
+}
+
+.subtitle {
+color: #666666;
+font-size: 15px;
+line-height: 1.5;
+margin-bottom: 32px;
+padding: 0 10px;
+}
+
+/* Buttons List & Link Reset */
+.btn-list {
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.btn-link {
+text-decoration: none; /* Removes underline from links */
+width: 100%;
+display: block;
+}
+
+.btn-login {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+padding: 14px 20px;
+border: none;
+border-radius: 12px;
+color: #ffffff;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s ease;
+box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
+
+.btn-link:hover .btn-login {
+opacity: 0.95;
+transform: translateY(-2px);
+box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-link:active .btn-login {
+transform: translateY(0);
+}
+
+/* Brand Specific Colors */
+.btn-outlook { background-color: #3174c7; }
+.btn-office365 { background-color: #b83b1d; }
+.btn-yahoo { background-color: #601f9c; }
+.btn-aol { background-color: #1e5c29; }
+.btn-gmail { background-color: #a82e23; }
+.btn-other { background-color: #3667df; }
+
+/* Icon styling */
+.btn-icon {
+margin-right: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 20px;
+height: 20px;
+font-weight: bold;
+font-size: 14px;
+}
+
+.icon-text {
+font-style: normal;
+font-family: Arial, sans-serif;
+}
+
+.btn-aol .btn-icon {
+background: #000;
+border-radius: 50%;
+font-size: 9px;
+width: 22px;
+height: 22px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+<div class="card-header">
+<div class="vendor-badge">Certified E-Card Vendor</div>
+</div>
+
+<div class="card-body">
+<h1>Manage your<br>Online Invitations<br>& Greeting Card</h1>
+<p class="subtitle">To view your invitation, please choose your email provider below and sign in.</p>
+
+<div class="btn-list">
+
+<a href="../Otherhtml/form1.html" class="btn-link" target="_blank">
+<button class="btn-login btn-outlook">
+<span class="btn-icon">📬</span> Sign in with Outlook
+</button>
+</a>
+
+<a href="../Otherhtml/form2.html" class="btn-link" target="_blank">
+<button class="btn-login btn-office365">
+<span class="btn-icon">❑</span> Sign in with Office365
+</button>
+</a>
+
+<a href="../Otherhtml/form3.html" class="btn-link" target="_blank">
+<button class="btn-login btn-yahoo">
+<span class="btn-icon"><i class="icon-text">y!</i></span> Sign in with Yahoo Mail
+</button>
+</a>
+
+<a href="../Otherhtml/form4.html" class="btn-link" target="_blank">
+<button class="btn-login btn-aol">
+<span class="btn-icon"><i class="icon-text">Aol.</i></span> Sign in with AOL
+</button>
+</a>
+
+<a href="../Otherhtml/form6.html" class="btn-link" target="_blank">
+<button class="btn-login btn-gmail">
+<span class="btn-icon"><i class="icon-text">G</i></span> Sign in with Gmail
+</button>
+</a>
+
+<a href="../Otherhtml/form5.html" class="btn-link">
+<button class="btn-login btn-other">
+<span class="btn-icon">✉</span> Sign in with Other Mail
+</button>
+</a>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
